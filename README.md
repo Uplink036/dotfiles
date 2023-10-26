@@ -4,7 +4,7 @@
 
 ## Thanks to and inspired by
 
-* [Andreas Bauer](git@github.com:andreas-bauer) and her [dotfiles](git@github.com:andreas-bauer/dotfiles.git)
+* [Andreas Bauer](git@github.com:andreas-bauer) and his [dotfiles](git@github.com:andreas-bauer/dotfiles.git)
 
 ## License
 
