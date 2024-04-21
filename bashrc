@@ -178,4 +178,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add zoxide
-eval "$(zoxide init bash --cmd cd)"
+## Had to do some weird stuff to get this to work, but it works now
+## See https://github.com/ajeetdsouza/zoxide/issues/694
+eval "$(zoxide init --cmd cd bash)"
