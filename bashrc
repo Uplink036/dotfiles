@@ -169,6 +169,13 @@ if ! shopt -oq posix; then
 fi
 alias vim=nvim
 
+# Fun with docker! 
+alias dockerSay='docker run docker/whalesay cowsay'
+
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add zoxide
+eval "$(zoxide init bash --cmd cd)"
