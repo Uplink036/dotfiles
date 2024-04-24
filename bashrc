@@ -134,21 +134,6 @@ function pretty_csv_semi
   cat $1 | column -t -s $';' | less -S 
 }
 
-# Function to get to the interested directory 
-#
-function work 
-{
-
-  path="$(find /home/oliver/Desktop/Github/ -type d -name "$1" -print)"
-  if [ -z "${path}" ];
-  then
-    cd /home/oliver/Desktop/Github/ 
-  else 
-    cd $path 
-  fi 
-
-}
-
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
