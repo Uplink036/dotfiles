@@ -1,6 +1,18 @@
 # Dotfiles
-
 ### My personal dotfiles
+## TMUX
+Todo: ...
+
+Note, using the geist mono nerd font. 
+
+## NVIM
+Todo: ...
+
+## BASH
+Todo: ...
+
+### ZOXIDE
+
 
 ## Thanks to and inspired by
 
