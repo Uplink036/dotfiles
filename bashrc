@@ -166,3 +166,7 @@ export NVM_DIR="$HOME/.nvm"
 ## Had to do some weird stuff to get this to work, but it works now
 ## See https://github.com/ajeetdsouza/zoxide/issues/694
 eval "$(zoxide init --cmd cd bash)"
+
+# syncthing options
+alias sc='syncthing'
+alias sco='syncthing --browser-only'
