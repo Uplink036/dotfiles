@@ -5,9 +5,6 @@ Todo: ...
 
 Note, using the geist mono nerd font. 
 
-## NVIM
-Todo: ...
-
 ## BASH
 Todo: ...
 
