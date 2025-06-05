@@ -1,0 +1,4 @@
+For apps who don't readily provide a APT key
+
+- Obsidian
+- Discord
