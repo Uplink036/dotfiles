@@ -9,6 +9,7 @@ install: ## Install all
 
 bash: ## Soft link this bash config file to the correct place
 	ln -sfn $(CURDIR)/bashrc $(HOME)/.bashrc;
+	ln -sfn $(CURDIR)/scripts/git_stats.py $(HOME)/.local/bin/git_stats.py
 
 .PHONY: tmux
 tmux: ## Soft link this tmux config file to the correct place

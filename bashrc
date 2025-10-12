@@ -172,3 +172,4 @@ alias sc='syncthing'
 alias sco='syncthing --browser-only'
 # Open GitHub repo in browser
 alias gh='echo "Opening GitHub repo in browser..." && (xdg-open $(git remote get-url origin | sed "s/git@github.com:/https:\/\/github.com\//" | sed "s/\.git$//") > /dev/null 2>&1 &)'
+alias stats=~/.local/bin/git_stats.py

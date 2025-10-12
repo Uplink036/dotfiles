@@ -5,9 +5,8 @@ from tempfile import TemporaryFile
 with TemporaryFile() as f:
     git_process = subprocess.run(["git", "log", "--pretty=format:\"%ad\"", "--date=short"], stdout=f)
     f.seek(0)
-    uniq_process = subprocess.run(
-        ["uniq", "-c"], stdin=f, stdout=subprocess.PIPE
-    )
+    uniq_process = subprocess.run(["uniq", "-c"], stdin=f, stdout=subprocess.PIPE)
+
 pipe_output = uniq_process.stdout.decode("ascii")
 line_split = pipe_output.split("\n")
 truncated_lines = [x.strip() for x in line_split] 
