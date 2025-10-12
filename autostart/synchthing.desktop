@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=synchthing --no-browser
+Exec=syncthing --no-browser
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name[en_US]=synchthing
+Name[en_US]=syncthing
 Name=synchthing
 Comment[en_US]=Start synchthing on startup
 Comment=Start synchthing on startup
