@@ -79,8 +79,9 @@ esac
 
 # Enter tmux upon startup of shell 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux a || tmux
+  tmux a -t default || exec tmux new -s default && exit;
 fi
+
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
