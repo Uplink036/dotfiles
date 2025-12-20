@@ -174,3 +174,6 @@ alias sco='syncthing --browser-only'
 # Open GitHub repo in browser
 alias gh='echo "Opening GitHub repo in browser..." && (xdg-open $(git remote get-url origin | sed "s/git@github.com:/https:\/\/github.com\//" | sed "s/\.git$//") > /dev/null 2>&1 &)'
 alias stats=~/.local/bin/git_stats.py
+alias kubectl="minikube kubectl --"
+# Docker Metrics
+alias ctop="docker run --rm -ti --name=ctop --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest"
