@@ -6,6 +6,7 @@ install: ## Install all
 	./install_gnome_extensions.sh
 	./install_tmux.sh
 	./install_zoxide.sh
+	./install_focus_terminal.sh
 
 bash: ## Soft link this bash config file to the correct place
 	ln -sfn $(CURDIR)/bashrc $(HOME)/.bashrc;
@@ -14,6 +15,11 @@ bash: ## Soft link this bash config file to the correct place
 .PHONY: tmux
 tmux: ## Soft link this tmux config file to the correct place
 	ln -sfn $(CURDIR)/tmux/ $(HOME)/.config/tmux;
+
+.PHONY: terminal
+terminal: ## Fixes a script to raise the terminal instead of creating a new one
+	chmod +x  $(CURDIR)/scripts/raise_terminal.sh
+	ln -sfn $(CURDIR)/scripts/raise_terminal.sh $(HOME)/.local/bin/raise_terminal.sh 
 
 .PHONY: startup
 startup:
