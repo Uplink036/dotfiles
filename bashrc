@@ -213,8 +213,19 @@ t_ssh() {
 }
 
 search() {
-  query=$(printf "%s" "$*" | sed 's/ /+/g')
-  xdg-open "https://www.google.com/search?q=$query" >/dev/null 2>&1 &
+    case "$1" in
+        -f)
+            shift
+            find . -type f -iname "*$*"
+            ;;
+        -c)
+            shift
+            grep -RIn --color=always "$*" .
+            ;;
+        *)
+            local query
+            query=$(printf "%s" "$*" | sed 's/ /+/g')
+            xdg-open "https://www.google.com/search?q=$query" >/dev/null 2>&1 &
+            ;;
+    esac
 }
-
-
