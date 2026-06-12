@@ -2,11 +2,12 @@ dotfiles: install bash tmux ## Do all the instalations
 	@echo "dotfiles set up"
 
 install: ## Install all 
-	./install_code.sh
-	./install_gnome_extensions.sh
-	./install_tmux.sh
-	./install_zoxide.sh
-	./install_focus_terminal.sh
+	./apps/install_code.sh
+	./apps/install_gnome_extensions.sh
+	./apps/install_tmux.sh
+	./apps/install_zoxide.sh
+	./apps/install_focus_terminal.sh
+	./apps/install_devcontainer_cli.sh
 
 bash: ## Soft link this bash config file to the correct place
 	ln -sfn $(CURDIR)/bashrc $(HOME)/.bashrc;

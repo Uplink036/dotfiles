@@ -177,3 +177,44 @@ alias stats=~/.local/bin/git_stats.py
 alias kubectl="minikube kubectl --"
 # Docker Metrics
 alias ctop="docker run --rm -ti --name=ctop --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest"
+alias dockerClean="docker system prune"
+export PATH="$HOME/.devcontainers/bin:$PATH"
+
+devcontainer_enter() {
+  local output=$(devcontainer up 2>&1 | tail -n 1)
+  local container_id=$(echo "$output" | jq -r '.containerId')
+  local user=$(echo "$output" | jq -r '.remoteUser')
+  local working_dir=$(echo "$output" | jq -r '.remoteWorkspaceFolder')
+
+  if [ -n "$container_id" ] && [ "$container_id" != "null" ]; then
+    tmux select-pane -P 'bg=#2b2c41,fg=#d2ebff'
+    docker exec -u "$user" -w "$working_dir" -it "$container_id" bash
+    tmux select-pane -P 'default'   
+  else
+    echo "Failed to get container info"
+    return 1
+  fi
+}
+
+docker_stop() {
+  local current_dir=$(basename $(pwd))
+  local conatiner_ids=$(docker ps | grep -i $current_dir | tail -n +1 | cut -d ' ' -f1)
+
+  for id in $conatiner_ids; do 
+    docker stop "$id"
+  done
+}
+
+
+t_ssh() {
+  tmux select-pane -P 'bg=#2b2c41,fg=#d2ebff'
+  ssh "$@"
+  tmux select-pane -P 'default'
+}
+
+search() {
+  query=$(printf "%s" "$*" | sed 's/ /+/g')
+  xdg-open "https://www.google.com/search?q=$query" >/dev/null 2>&1 &
+}
+
+
