@@ -104,14 +104,27 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # some git aliases 
+source /usr/share/bash-completion/completions/git
 alias gs='git status'
+__git_complete gs _git_status
 alias ga='git add '
+__git_complete ga _git_add
 alias gb='git branch '
+__git_complete gb _git_branch
 alias gc='git commit --verbose'
+__git_complete gc _git_commit
 alias gd='git diff'
+__git_complete gd _git_diff
 alias gco='git checkout '
+__git_complete gco _git_checkout
 alias gl='git log --graph --decorate --pretty=oneline --abbrev-commit'
+__git_complete gl _git_checkout
 alias gr='git restore '
+__git_complete gr _git_restore
+alias gp='git pull '
+__git_complete gp _git_pull
+alias gf='git fetch '
+__git_complete gf _git_fetch
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
